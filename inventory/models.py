@@ -1,7 +1,11 @@
 from django.db import models
+from  owner.models import Owner
+
+
 
 # Create your models here.
 class Products(models.Model):
+    owner = models.ForeignKey(Owner,on_delete=models.CASCADE)
     name = models.CharField('Product Name', max_length=32)
     description =models.TextField('Description'  )
     image = models.ImageField('Image')
@@ -13,8 +17,12 @@ class Products(models.Model):
     
     
     # in  creating a model it is important to create a string represenation of that model
+    
     def __str__(self):
         return self.name
+    
+    
+    
     
     
     

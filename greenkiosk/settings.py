@@ -42,6 +42,11 @@ INSTALLED_APPS = [
     'cart',
     'review',
     'notifications',
+    'Vendor',
+    'shipment',
+    'payment',
+    'Order',
+    'customer',
     
 ]
 
@@ -92,7 +97,7 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'
     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
