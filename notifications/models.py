@@ -8,3 +8,6 @@ class Notification(models.Model):
     read = models.BooleanField(default=False, blank=True)
     user = models.ForeignKey("auth.User", on_delete=models.CASCADE,)
     
+    def __str__(self):
+     return self.title
+ 

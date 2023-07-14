@@ -1,15 +1,17 @@
 from django.db import models
-from  owner.models import Owner
+from vendor.models import Vendor
+
 
 
 
 # Create your models here.
 class Products(models.Model):
-    owner = models.ForeignKey(Owner,on_delete=models.CASCADE)
     name = models.CharField('Product Name', max_length=32)
+
+    userVendor = models.ForeignKey(Vendor, on_delete=models.CASCADE)
     description =models.TextField('Description'  )
-    image = models.ImageField('Image')
-    price = models.DecimalField('Price',max_digits= 4, decimal_places= 4)
+    image = models.ImageField()
+    price = models.DecimalField('Price',max_digits= 4, decimal_places= 2)
     stock = models.PositiveIntegerField('Stock')
     # Timestamp tells us when the object was created
     date_created= models.DateTimeField('Date',auto_now_add= True)
